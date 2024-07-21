@@ -9,7 +9,6 @@ This is a template project to use when you need to add scanning and/or test auto
 - [Key Steps of the Pipeline](#key-steps-of-the-pipeline)
 - [Pipeline Parameters](#pipeline-parameters)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
 - [Setup GitLab Token](#setup-gitlab-token)
 - [Setting Up GitLab Runner](#setting-up-gitlab-runner)
 - [Triggering the Pipeline for Testing](#triggering-the-pipeline-for-testing)
