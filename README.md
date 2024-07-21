@@ -1,5 +1,5 @@
 # devsecops-pipeline-template
-Adding the Sec in DevSecOps.
+⚡ Adding the Sec in DevSecOps.
 
 This is a template project to use when you need to add scanning and/or test automation into your existing GitLab runner pipelines using OpenShift.
 
@@ -87,6 +87,7 @@ helm upgrade --namespace devsecops-pipeline-template --install -f tekton-pipelin
 ```
 # Setting Up GitLab Runner
 A GitLab runner needs to be set up. Contact Jonathan D'Andries for assistance. Once set up, verify the configuration in GitLab under CI/CD settings.
+Once the runner has been set up, it will be configured with tags. You can verify this by logging into GitLab, search for the repository, and navigating to the CI/CD settings. On the left-hand side, toggle the CI/CD option, then locate the runner toggle and click on 'expand' for more details.
 
 Tags to be added in the **.gitlab-ci.yaml** file:
 
@@ -98,7 +99,9 @@ Tags to be added in the **.gitlab-ci.yaml** file:
 
 # Triggering the Pipeline for Testing
 
-The pipeline can be triggered manually using the curl command:
+The pipeline can be triggered manually using the curl command as shown below.
+
+A separate Ingress endpoint is available for curl that expects the pipeline parameters to be provided in the JSON data sent in the body.
 
 ```bash
 # Change the gitRevision, gitUserName, and emailRecipientList as needed
@@ -109,8 +112,11 @@ curl -i -X POST http://tekton-pipeline-devsecops.apps.dev.cloudapps-e.nsapps.dcn
 To manually trigger the pipeline:
 
 **1) Navigate to the Repository:** Open the repository in your web browser.
+
 **2) Access the Pipeline Section:** Look for the "Actions" or "Pipelines" tab.
+
 **3) Select the Pipeline to Trigger:** Identify the pipeline associated with the branch or commit you want to trigger.
+
 **4) Initiate the Pipeline Manually:** Click on the "Run pipeline" option.
 
 
